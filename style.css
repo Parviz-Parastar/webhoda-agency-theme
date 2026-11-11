@@ -1,0 +1,227 @@
+
+/*
+Theme Name: WEBHODA
+Theme URI: https://example.com/
+Author: WEBHODA
+Description: Custom WordPress theme for WEBHODA Digital Growth Agency.
+Version: 1.0.0
+Text Domain: agency-theme
+*/
+
+/* ========================================
+   1. BRAND DESIGN TOKENS
+======================================== */
+
+:root {
+    /* Brand Colors */
+
+    --color-navy: #111C32;
+    --color-ivory: #F4EBDD;
+    --color-gold: #C6A15B;
+    --color-turquoise: #176F70;
+    --color-burgundy: #8E493C;
+    --color-charcoal: #29272A;
+
+    /* Additional Colors */
+
+    --color-white: #FFFFFF;
+    --color-muted: #77736C;
+    --color-border: #DED5C6;
+
+    /* Typography */
+
+    --font-primary: Tahoma, Arial, sans-serif;
+    --font-secondary: Georgia, serif;
+
+    /* Layout */
+
+    --container-width: 1200px;
+    --container-padding: 20px;
+
+    /* Transitions */
+
+    --transition-fast: 0.25s ease;
+}
+
+
+/* ========================================
+   2. GLOBAL RESET
+======================================== */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    direction: rtl;
+    text-align: right;
+
+    font-family: var(--font-primary);
+    font-size: 16px;
+    line-height: 1.8;
+
+    background-color: var(--color-ivory);
+    color: var(--color-charcoal);
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+a {
+    text-decoration: none;
+}
+
+
+/* ========================================
+   3. GLOBAL CONTAINER
+======================================== */
+
+.container {
+    width: 100%;
+    max-width: var(--container-width);
+
+    margin-left: auto;
+    margin-right: auto;
+
+    padding-left: var(--container-padding);
+    padding-right: var(--container-padding);
+}
+
+
+/* ========================================
+   4. SITE HEADER
+======================================== */
+
+#site-header {
+    width: 100%;
+    background-color: var(--color-navy);
+    color: var(--color-white);
+}
+
+/* Header Layout */
+
+#site-header .container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 30px;
+
+    direction: ltr;
+    width: 100%;
+}
+
+/* Header Links */
+
+#site-header a {
+    color: var(--color-white);
+    transition: color var(--transition-fast);
+}
+
+#site-header a:hover {
+    color: var(--color-gold);
+}
+
+
+/* ========================================
+   5. PRIMARY NAVIGATION
+======================================== */
+
+#site-header .primary-navigation {
+    direction: rtl;
+}
+
+.primary-menu {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+
+    gap: 28px;
+
+    margin: 0;
+    padding: 0;
+
+    list-style: none;
+}
+
+.primary-menu li {
+    margin: 0;
+    padding: 0;
+}
+
+.primary-menu a {
+    display: block;
+    padding: 12px 0;
+
+    color: var(--color-white);
+
+    transition: color var(--transition-fast);
+}
+
+.primary-menu a:hover {
+    color: var(--color-gold);
+}
+
+
+/* ========================================
+   6. SITE CONTENT
+======================================== */
+
+#site-content {
+    min-height: 400px;
+    padding: 40px 20px;
+}
+
+
+/* ========================================
+   7. SITE FOOTER
+======================================== */
+
+#site-footer {
+    padding: 20px;
+
+    direction: rtl;
+    text-align: center;
+
+    background-color: var(--color-navy);
+    color: var(--color-white);
+}
+
+
+/* ========================================
+   8. RESPONSIVE FOUNDATION
+======================================== */
+
+@media (max-width: 768px) {
+
+    :root {
+        --container-padding: 16px;
+    }
+
+    #site-header .container {
+        flex-wrap: wrap;
+        gap: 16px;
+    }
+
+    .primary-menu {
+        flex-wrap: wrap;
+        gap: 16px;
+    }
+
+    #site-content {
+        padding: 24px 16px;
+    }
+
+}
+

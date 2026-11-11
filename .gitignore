@@ -1,0 +1,22 @@
+
+# Operating system files
+.DS_Store
+Thumbs.db
+
+# Log files
+*.log
+debug.log
+
+# Sensitive configuration
+.env
+.env.*
+.venv
+wp-config.php
+
+# Dependencies
+node_modules/
+vendor/
+
+# Temporary files
+*.tmp
+*.bak
