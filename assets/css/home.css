@@ -509,17 +509,23 @@
 
 /*
  * Section 5 of the homepage. Navy surface to alternate with the ivory
- * Services section. The section is non-interactive: no hover, focus or
- * transition rules are needed, so it has no reduced-motion exceptions.
+ * Services section. The section is non-interactive and has no transitions
+ * or animations, so it needs no reduced-motion exceptions.
+ *
+ * Decorative stars (divider, numbers) are two overlapping squares, the
+ * same eight-pointed geometry as the background pattern in the template.
  */
 .why-section {
     position: relative;
     isolation: isolate;
     overflow: hidden;
 
-    padding: clamp(56px, 8vw, 104px) 0;
+    padding: clamp(64px, 9vw, 120px) 0;
 
     background-color: var(--color-navy);
+    background-image:
+        radial-gradient(ellipse 70% 55% at 50% 0%, rgba(23, 111, 112, 0.22), transparent 70%),
+        radial-gradient(ellipse 60% 40% at 50% 100%, rgba(198, 161, 91, 0.08), transparent 70%);
     color: var(--color-ivory);
 
     border-top: 1px solid rgba(198, 161, 91, 0.45);
@@ -548,14 +554,18 @@
 /* Section Header */
 
 .why-header {
-    max-width: 720px;
-    margin: 0 auto clamp(36px, 5vw, 56px);
+    max-width: 780px;
+    margin: 0 auto clamp(48px, 6vw, 72px);
 
     text-align: center;
 }
 
 .why-eyebrow {
-    margin: 0 0 8px;
+    display: inline-flex;
+    align-items: center;
+    gap: 14px;
+
+    margin: 0 0 14px;
 
     color: var(--color-gold);
 
@@ -564,27 +574,39 @@
     letter-spacing: 0;
 }
 
+.why-eyebrow::before,
+.why-eyebrow::after {
+    content: "";
+
+    width: 28px;
+    height: 1px;
+
+    background-color: rgba(198, 161, 91, 0.6);
+}
+
 .why-title {
     margin: 0;
 
     color: var(--color-white);
 
-    font-size: clamp(24px, 3vw, 34px);
+    font-size: clamp(26px, 3.6vw, 40px);
     font-weight: 800;
-    line-height: 1.6;
+    line-height: 1.55;
+
+    text-wrap: balance;
 }
 
-/* Ornamental divider: two lines around a rotated square */
+/* Ornamental divider: a line with an eight-pointed star at its center */
 
 .why-divider {
     position: relative;
 
     display: block;
 
-    width: 160px;
+    width: 180px;
     height: 1px;
 
-    margin: 18px auto;
+    margin: 24px auto;
 
     background: linear-gradient(
         90deg,
@@ -595,37 +617,51 @@
     );
 }
 
-.why-divider::before {
+.why-divider::before,
+.why-divider::after {
     content: "";
 
     position: absolute;
     top: 50%;
     left: 50%;
 
-    width: 10px;
-    height: 10px;
+    width: 14px;
+    height: 14px;
 
-    background-color: var(--color-navy);
     border: 1px solid var(--color-gold);
+}
+
+/* Rotated square: navy fill hides the line behind the star */
+
+.why-divider::before {
+    background-color: var(--color-navy);
 
     transform: translate(-50%, -50%) rotate(45deg);
 }
 
+/* Upright square: outline only, completes the eight-pointed star */
+
+.why-divider::after {
+    transform: translate(-50%, -50%);
+}
+
 .why-intro {
-    margin: 0;
+    max-width: 640px;
+    margin: 0 auto;
 
     color: var(--color-ivory);
 
-    font-size: clamp(16px, 1.5vw, 18px);
-    line-height: 1.9;
+    font-size: clamp(16px, 1.6vw, 18px);
+    line-height: 2;
 }
 
-/* Pillars: open columns separated by a gold hairline, not cards */
+/* Pillars: open columns, no cards */
 
 .why-pillars {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 32px 40px;
+    align-items: start;
+    gap: 44px 40px;
 
     margin: 0;
     padding: 0;
@@ -637,87 +673,160 @@
     position: relative;
 
     margin: 0;
-    padding-top: 24px;
-
-    border-top: 1px solid rgba(198, 161, 91, 0.4);
 }
 
-/* Gold accent segment at the start (right in RTL) */
-
+/*
+ * Hairline that starts after the numbered star and fades out.
+ * The theme is RTL-only, so 270deg runs from the start (right) edge.
+ */
 .why-pillar::before {
     content: "";
 
     position: absolute;
-    top: -2px;
-    inset-inline-start: 0;
+    top: 32px;
+    inset-inline-start: 76px;
+    inset-inline-end: 0;
 
-    width: 48px;
-    height: 3px;
+    height: 1px;
 
-    background-color: var(--color-gold);
+    background: linear-gradient(
+        270deg,
+        rgba(198, 161, 91, 0.55),
+        transparent
+    );
 }
 
-.why-pillar-number {
-    display: block;
+/* Number inside an eight-pointed star */
 
-    margin-bottom: 8px;
+.why-pillar-number {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 64px;
+    height: 64px;
+
+    margin-bottom: 22px;
 
     color: var(--color-gold);
 
-    font-size: 34px;
+    font-size: 17px;
     font-weight: 700;
-    line-height: 1.2;
+    line-height: 1;
+}
+
+.why-pillar-number::before,
+.why-pillar-number::after {
+    content: "";
+
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    bottom: 10px;
+    left: 10px;
+
+    border: 1px solid rgba(198, 161, 91, 0.7);
+}
+
+.why-pillar-number::after {
+    transform: rotate(45deg);
 }
 
 .why-pillar-title {
-    margin: 0 0 8px;
+    margin: 0 0 10px;
 
     color: var(--color-white);
 
-    font-size: 19px;
+    font-size: 20px;
     font-weight: 800;
-    line-height: 1.6;
+    line-height: 1.7;
+
+    text-wrap: balance;
 }
 
 .why-pillar-text {
     margin: 0;
 
-    color: rgba(244, 235, 221, 0.88);
+    color: rgba(244, 235, 221, 0.86);
 
     font-size: 15px;
-    line-height: 1.9;
+    line-height: 2;
 }
 
-/* Pledge band */
+/* Pledge: framed, centered block, visually distinct from the pillars */
 
 .why-pledge {
-    max-width: 820px;
-    margin: clamp(40px, 6vw, 64px) auto 0;
-    padding: 28px 24px;
+    position: relative;
 
-    background-color: rgba(255, 255, 255, 0.04);
-    border: 1px solid rgba(198, 161, 91, 0.35);
-    border-inline-start: 3px solid var(--color-gold);
-    border-radius: 6px;
+    max-width: 860px;
+    margin: clamp(56px, 7vw, 88px) auto 0;
+    padding: 44px 24px 32px;
+
+    text-align: center;
+
+    background: linear-gradient(
+        180deg,
+        rgba(198, 161, 91, 0.08),
+        rgba(198, 161, 91, 0.02)
+    );
+    border: 1px solid rgba(198, 161, 91, 0.45);
+    border-radius: 4px;
+}
+
+/* Inner hairline frame */
+
+.why-pledge::before {
+    content: "";
+
+    position: absolute;
+    inset: 6px;
+
+    border: 1px solid rgba(198, 161, 91, 0.2);
+    border-radius: 2px;
+
+    pointer-events: none;
+}
+
+/* Diamond ornament centered on the top edge */
+
+.why-pledge::after {
+    content: "";
+
+    position: absolute;
+    top: 0;
+    left: 50%;
+
+    width: 12px;
+    height: 12px;
+
+    background-color: var(--color-navy);
+    border: 1px solid var(--color-gold);
+
+    transform: translate(-50%, -50%) rotate(45deg);
 }
 
 .why-pledge-title {
-    margin: 0 0 8px;
+    margin: 0 0 12px;
 
     color: var(--color-gold);
 
-    font-size: 19px;
+    font-size: clamp(19px, 2.2vw, 24px);
     font-weight: 800;
-    line-height: 1.6;
+    line-height: 1.7;
+
+    text-wrap: balance;
 }
 
 .why-pledge-text {
-    margin: 0;
+    max-width: 680px;
+    margin: 0 auto;
 
     color: var(--color-ivory);
 
-    font-size: 16px;
-    line-height: 1.9;
+    font-size: clamp(16px, 1.6vw, 17px);
+    line-height: 2;
 }
 
 /* Why WEBHODA Responsive */
@@ -726,15 +835,18 @@
 
     .why-pillars {
         grid-template-columns: repeat(2, 1fr);
+        gap: 56px 48px;
     }
 
     .why-pledge {
-        padding: 32px 36px;
+        padding: 52px 56px 40px;
     }
 
 }
 
-@media (min-width: 1100px) {
+/* Four columns only where each column stays wide enough for Persian text */
+
+@media (min-width: 1200px) {
 
     .why-pillars {
         grid-template-columns: repeat(4, 1fr);

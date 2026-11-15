@@ -4,34 +4,33 @@
  *
  * Section 5 of the six-section homepage structure (V-006).
  *
- * Content status: PROPOSED. All Persian copy below is a proposal and is not
- * approved yet. The copy describes WEBHODA's approach and values only: it
- * contains no statistics, client names, testimonials, guarantees or claims
- * about the readiness of any specific service.
+ * Copy: supplied by the project owner. It must not be reworded without the
+ * owner's approval. It contains no statistics, client names, testimonials
+ * or guarantees.
  *
  * The section is intentionally non-interactive (no links, no JavaScript).
  */
 
 $pillars = array(
     array(
-        'number' => '۱',
-        'title'  => __('شریک رشد، نه صرفاً مجری', 'agency-theme'),
-        'text'   => __('پیش از اجرا، هدف کسب‌وکار و مخاطب شما را می‌شناسیم تا هر تصمیم طراحی و فنی در خدمت رشد باشد.', 'agency-theme'),
+        'number' => '۰۱',
+        'title'  => __('شناخت کسب‌وکار، پیش از آغاز راه', 'agency-theme'),
+        'text'   => __('هر کسب‌وکار مسیر و نیازهای منحصربه‌فرد خود را دارد. پیش از هر اقدامی، اهداف، مخاطبان و ظرفیت‌های کسب‌وکار شما را بررسی می‌کنیم تا راهکارها بر پایه شناخت و متناسب با واقعیت‌های شما شکل بگیرند.', 'agency-theme'),
     ),
     array(
-        'number' => '۲',
-        'title'  => __('تمرکز بر فروش و ارزش پایدار', 'agency-theme'),
-        'text'   => __('معیار ما فقط ظاهر و اجرای کار نیست؛ جذب مشتری، بهبود فروش و ارزشی است که در بلندمدت می‌ماند.', 'agency-theme'),
+        'number' => '۰۲',
+        'title'  => __('تمرکز بر نتیجه و ارزش‌آفرینی', 'agency-theme'),
+        'text'   => __('زیبایی و کیفیت اجرا، تنها بخشی از یک راهکار موفق است. طراحی و بازاریابی باید به اهداف واقعی کسب‌وکار کمک کنند؛ از افزایش دیده‌شدن و جذب مشتری تا بهبود تجربه مخاطب و تقویت مسیر فروش.', 'agency-theme'),
     ),
     array(
-        'number' => '۳',
-        'title'  => __('استراتژی، بازاریابی و فناوری در یک مسیر', 'agency-theme'),
-        'text'   => __('طراحی، سئو، محتوا و در صورت نیاز هوش مصنوعی را به‌جای کارهای جدا از هم، در یک برنامه هماهنگ می‌بینیم.', 'agency-theme'),
+        'number' => '۰۳',
+        'title'  => __('پیوند استراتژی، خلاقیت و فناوری', 'agency-theme'),
+        'text'   => __('از طراحی وب‌سایت و بهینه‌سازی موتورهای جست‌وجو تا تولید محتوا و ابزارهای هوشمند، راهکارهای دیجیتال را در مسیری منسجم به هم پیوند می‌دهیم تا هر بخش، مکمل بخش دیگر باشد.', 'agency-theme'),
     ),
     array(
-        'number' => '۴',
-        'title'  => __('نگاه بلندمدت', 'agency-theme'),
-        'text'   => __('رشد را یک مسیر می‌دانیم: اندازه‌گیری، یادگرفتن و بهبود مداوم، نه یک تحویل یک‌باره.', 'agency-theme'),
+        'number' => '۰۴',
+        'title'  => __('رشد مستمر، نه یک تحویل مقطعی', 'agency-theme'),
+        'text'   => __('همکاری را با تحویل یک پروژه پایان‌یافته نمی‌دانیم. بررسی عملکرد، تحلیل داده‌ها و بهبود مستمر، زمینه تصمیم‌گیری دقیق‌تر و حرکت هدفمندتر کسب‌وکار شما را فراهم می‌کند.', 'agency-theme'),
     ),
 );
 ?>
@@ -63,17 +62,17 @@ $pillars = array(
         <header class="why-header">
 
             <p class="why-eyebrow">
-                <?php echo esc_html__('چرا وب‌هُدیٰ؟', 'agency-theme'); ?>
+                <?php echo esc_html__('چرا وب هُدیٰ؟', 'agency-theme'); ?>
             </p>
 
             <h2 id="why-title" class="why-title">
-                <?php echo esc_html__('شریک رشد کسب‌وکار شما، نه فقط مجری یک پروژه', 'agency-theme'); ?>
+                <?php echo esc_html__('همراه شما در مسیر رشد؛ فراتر از یک همکاری دیجیتال', 'agency-theme'); ?>
             </h2>
 
             <span class="why-divider" aria-hidden="true"></span>
 
             <p class="why-intro">
-                <?php echo esc_html__('کار ما از ساخت یک وب‌سایت شروع می‌شود، اما به همان‌جا ختم نمی‌شود. هدف ما کمک به دیده‌شدن، جذب مشتری و رشد پایدار کسب‌وکار شماست.', 'agency-theme'); ?>
+                <?php echo esc_html__('ما در وب هُدیٰ، فناوری، استراتژی و خلاقیت را در کنار هم قرار می‌دهیم تا کسب‌وکار شما حضوری مؤثرتر در فضای دیجیتال داشته باشد، مشتریان بیشتری جذب کند و برای رشد پایدار آماده شود.', 'agency-theme'); ?>
             </p>
 
         </header>
@@ -102,14 +101,14 @@ $pillars = array(
 
         </ul>
 
-        <div class="why-pledge">
+        <div class="why-pledge" role="group" aria-labelledby="why-pledge-title">
 
-            <h3 class="why-pledge-title">
-                <?php echo esc_html__('تعهد ما: صداقت و امانت‌داری', 'agency-theme'); ?>
+            <h3 id="why-pledge-title" class="why-pledge-title">
+                <?php echo esc_html__('تعهد ما؛ صداقت در مسیر، امانت‌داری در همکاری', 'agency-theme'); ?>
             </h3>
 
             <p class="why-pledge-text">
-                <?php echo esc_html__('نام وب‌هُدیٰ از «هدایت» می‌آید. برای ما این یعنی مسیر شفاف، وعده‌های واقع‌بینانه و مسئولیت در برابر کار انجام‌شده. نه نتیجه فروش یا رتبه تضمین می‌کنیم و نه چیزی را بزرگ‌تر از واقعیت نشان می‌دهیم.', 'agency-theme'); ?>
+                <?php echo esc_html__('نام وب هُدیٰ یادآور مفهوم هدایت است؛ مفهومی که در نگاه ما با مسئولیت‌پذیری، شفافیت و خدمت صادقانه معنا پیدا می‌کند. به همین دلیل، آنچه ارائه می‌دهیم بر پایه واقعیت، تخصص و تعهد است؛ نه وعده‌های اغراق‌آمیز و نتایج تضمین‌نشده.', 'agency-theme'); ?>
             </p>
 
         </div>
