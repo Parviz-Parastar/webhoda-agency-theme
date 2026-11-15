@@ -12,6 +12,8 @@ get_header();
 
     <?php get_template_part('template-parts/home/services'); ?>
 
+    <?php get_template_part('template-parts/home/why-webhoda'); ?>
+
 </main>
 
 <?php

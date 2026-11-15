@@ -501,3 +501,244 @@
     }
 
 }
+
+
+/* ========================================
+   WEBHODA — HOMEPAGE WHY WEBHODA
+======================================== */
+
+/*
+ * Section 5 of the homepage. Navy surface to alternate with the ivory
+ * Services section. The section is non-interactive: no hover, focus or
+ * transition rules are needed, so it has no reduced-motion exceptions.
+ */
+.why-section {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+
+    padding: clamp(56px, 8vw, 104px) 0;
+
+    background-color: var(--color-navy);
+    color: var(--color-ivory);
+
+    border-top: 1px solid rgba(198, 161, 91, 0.45);
+    border-bottom: 1px solid rgba(198, 161, 91, 0.45);
+}
+
+/* Decorative pattern: strongest at the edges so it never sits behind text */
+
+.why-pattern {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+
+    width: 100%;
+    height: 100%;
+
+    color: var(--color-gold);
+    opacity: 0.1;
+
+    pointer-events: none;
+
+    -webkit-mask-image: radial-gradient(ellipse at center, transparent 20%, #000 90%);
+    mask-image: radial-gradient(ellipse at center, transparent 20%, #000 90%);
+}
+
+/* Section Header */
+
+.why-header {
+    max-width: 720px;
+    margin: 0 auto clamp(36px, 5vw, 56px);
+
+    text-align: center;
+}
+
+.why-eyebrow {
+    margin: 0 0 8px;
+
+    color: var(--color-gold);
+
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0;
+}
+
+.why-title {
+    margin: 0;
+
+    color: var(--color-white);
+
+    font-size: clamp(24px, 3vw, 34px);
+    font-weight: 800;
+    line-height: 1.6;
+}
+
+/* Ornamental divider: two lines around a rotated square */
+
+.why-divider {
+    position: relative;
+
+    display: block;
+
+    width: 160px;
+    height: 1px;
+
+    margin: 18px auto;
+
+    background: linear-gradient(
+        90deg,
+        transparent,
+        var(--color-gold) 30%,
+        var(--color-gold) 70%,
+        transparent
+    );
+}
+
+.why-divider::before {
+    content: "";
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    width: 10px;
+    height: 10px;
+
+    background-color: var(--color-navy);
+    border: 1px solid var(--color-gold);
+
+    transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.why-intro {
+    margin: 0;
+
+    color: var(--color-ivory);
+
+    font-size: clamp(16px, 1.5vw, 18px);
+    line-height: 1.9;
+}
+
+/* Pillars: open columns separated by a gold hairline, not cards */
+
+.why-pillars {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 32px 40px;
+
+    margin: 0;
+    padding: 0;
+
+    list-style: none;
+}
+
+.why-pillar {
+    position: relative;
+
+    margin: 0;
+    padding-top: 24px;
+
+    border-top: 1px solid rgba(198, 161, 91, 0.4);
+}
+
+/* Gold accent segment at the start (right in RTL) */
+
+.why-pillar::before {
+    content: "";
+
+    position: absolute;
+    top: -2px;
+    inset-inline-start: 0;
+
+    width: 48px;
+    height: 3px;
+
+    background-color: var(--color-gold);
+}
+
+.why-pillar-number {
+    display: block;
+
+    margin-bottom: 8px;
+
+    color: var(--color-gold);
+
+    font-size: 34px;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.why-pillar-title {
+    margin: 0 0 8px;
+
+    color: var(--color-white);
+
+    font-size: 19px;
+    font-weight: 800;
+    line-height: 1.6;
+}
+
+.why-pillar-text {
+    margin: 0;
+
+    color: rgba(244, 235, 221, 0.88);
+
+    font-size: 15px;
+    line-height: 1.9;
+}
+
+/* Pledge band */
+
+.why-pledge {
+    max-width: 820px;
+    margin: clamp(40px, 6vw, 64px) auto 0;
+    padding: 28px 24px;
+
+    background-color: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(198, 161, 91, 0.35);
+    border-inline-start: 3px solid var(--color-gold);
+    border-radius: 6px;
+}
+
+.why-pledge-title {
+    margin: 0 0 8px;
+
+    color: var(--color-gold);
+
+    font-size: 19px;
+    font-weight: 800;
+    line-height: 1.6;
+}
+
+.why-pledge-text {
+    margin: 0;
+
+    color: var(--color-ivory);
+
+    font-size: 16px;
+    line-height: 1.9;
+}
+
+/* Why WEBHODA Responsive */
+
+@media (min-width: 640px) {
+
+    .why-pillars {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .why-pledge {
+        padding: 32px 36px;
+    }
+
+}
+
+@media (min-width: 1100px) {
+
+    .why-pillars {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 32px;
+    }
+
+}

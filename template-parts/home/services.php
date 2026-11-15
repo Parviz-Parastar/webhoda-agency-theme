@@ -84,7 +84,7 @@ $services = array(
 
         </header>
 
-        <ul class="services-grid">
+        <ul class="services-grid" role="list">
 
             <?php foreach ($services as $service) : ?>
 
