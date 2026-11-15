@@ -396,14 +396,11 @@
     pointer-events: none;
 }
 
-.service-card:hover {
-    border-color: var(--color-gold);
-    box-shadow: 0 14px 32px rgba(17, 28, 50, 0.1);
-}
-
-.service-card:hover::before {
-    width: 96px;
-}
+/*
+ * Hover effects were intentionally removed (decision D1): the cards are
+ * not interactive, so they must not look clickable. Re-evaluate the hover
+ * design when the cards link to standalone service pages.
+ */
 
 /* Icon: octagonal navy badge */
 

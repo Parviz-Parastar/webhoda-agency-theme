@@ -1,5 +1,4 @@
 
-
 /*
 Theme Name: WEBHODA
 Theme URI: https://example.com/
@@ -784,4 +783,29 @@ input:focus-visible {
     background-color: var(--color-navy);
     color: var(--color-white);
     border-color: var(--color-navy);
+}
+
+
+/* ========================================
+   14. REDUCED MOTION
+======================================== */
+
+/*
+ * Disables every transition defined in this file for users who request
+ * reduced motion. Only `transition` is overridden: colors, focus
+ * indicators, the skip link and the normal appearance are unchanged.
+ * Homepage transitions are handled in assets/css/home.css.
+ */
+@media (prefers-reduced-motion: reduce) {
+
+    .brand-link,
+    .primary-menu a,
+    .primary-menu a::after,
+    .header-search,
+    .header-search-button,
+    .header-cta,
+    .search-result-title a {
+        transition: none;
+    }
+
 }
