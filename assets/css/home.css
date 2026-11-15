@@ -1,0 +1,506 @@
+/* ========================================
+   WEBHODA — HOMEPAGE LAYOUT
+======================================== */
+
+/*
+ * The global #site-content rule in style.css adds padding and min-height
+ * for regular pages. The homepage must be full-bleed, so it is reset here.
+ * The ID + class selector outranks #site-content, including its media queries.
+ */
+#site-content.webhoda-homepage {
+    padding: 0;
+    min-height: 0;
+}
+
+
+/* ========================================
+   WEBHODA — HOMEPAGE HERO
+======================================== */
+
+.hero-section {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    background-color: var(--color-navy);
+}
+
+/* Architectural Image */
+
+.hero-architecture {
+    position: relative;
+    width: 100%;
+    min-height: 680px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    isolation: isolate;
+}
+
+.hero-architecture-image {
+    position: absolute;
+    inset: 0;
+
+    z-index: -2;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    object-position: center center;
+}
+
+/* Dark Overlay */
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 40px 20px;
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(17, 28, 50, 0.12),
+            rgba(17, 28, 50, 0.30)
+        );
+}
+
+/* Central Entrance Content */
+
+.hero-central-content {
+    width: min(100%, 620px);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    gap: 12px;
+
+    padding: 24px;
+
+    text-align: center;
+    direction: rtl;
+}
+
+/* Brand */
+
+.hero-brand {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    color: var(--color-gold);
+    text-decoration: none;
+}
+
+.hero-brand-name {
+    font-family: var(--font-secondary);
+    font-size: clamp(24px, 3vw, 38px);
+    font-weight: 700;
+    letter-spacing: 3px;
+    line-height: 1.3;
+}
+
+.hero-brand-persian {
+    font-size: 18px;
+    font-weight: 700;
+}
+
+/* Heading */
+
+.hero-title {
+    margin: 8px 0 0;
+
+    color: var(--color-white);
+
+    font-size: clamp(25px, 3.2vw, 42px);
+    line-height: 1.6;
+    font-weight: 800;
+}
+
+.hero-description {
+    max-width: 520px;
+    margin: 0;
+
+    color: var(--color-ivory);
+
+    font-size: clamp(16px, 1.5vw, 19px);
+    line-height: 1.9;
+}
+
+/* Buttons */
+
+.hero-actions {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    gap: 14px;
+    margin-top: 18px;
+}
+
+.hero-button {
+    min-height: 48px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 10px 24px;
+
+    border: 1px solid var(--color-gold);
+    border-radius: 4px;
+
+    font-size: 16px;
+    font-weight: 700;
+
+    text-decoration: none;
+
+    transition:
+        color var(--transition-fast),
+        background-color var(--transition-fast),
+        border-color var(--transition-fast);
+}
+
+.hero-button-primary {
+    background-color: var(--color-gold);
+    color: var(--color-navy);
+}
+
+.hero-button-primary:hover {
+    background-color: transparent;
+    color: var(--color-gold);
+}
+
+.hero-button-secondary {
+    background-color: rgba(17, 28, 50, 0.35);
+    color: var(--color-white);
+}
+
+.hero-button-secondary:hover {
+    background-color: var(--color-white);
+    color: var(--color-navy);
+}
+
+/* Responsive */
+
+@media (max-width: 768px) {
+
+    .hero-architecture {
+        min-height: 580px;
+    }
+
+    .hero-architecture-image {
+        object-position: center center;
+    }
+
+    .hero-central-content {
+        gap: 10px;
+        padding: 16px;
+    }
+
+    .hero-actions {
+        width: 100%;
+        flex-direction: column;
+    }
+
+    .hero-button {
+        width: min(100%, 280px);
+    }
+
+}
+
+@media (max-width: 480px) {
+
+    .hero-architecture {
+        min-height: 520px;
+    }
+
+    .hero-brand-name {
+        font-size: 25px;
+    }
+
+    .hero-brand-persian {
+        font-size: 16px;
+    }
+
+}
+
+
+/* ========================================
+   WEBHODA — HOMEPAGE SERVICES
+======================================== */
+
+.services-section {
+    padding: clamp(56px, 8vw, 104px) 0;
+
+    background-color: var(--color-ivory);
+    border-top: 1px solid rgba(198, 161, 91, 0.45);
+}
+
+/* Section Header */
+
+.services-header {
+    max-width: 680px;
+    margin: 0 auto clamp(36px, 5vw, 56px);
+
+    text-align: center;
+}
+
+.services-eyebrow {
+    margin: 0 0 8px;
+
+    color: var(--color-turquoise);
+
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0;
+}
+
+.services-title {
+    margin: 0;
+
+    color: var(--color-navy);
+
+    font-size: clamp(24px, 3vw, 34px);
+    font-weight: 800;
+    line-height: 1.6;
+}
+
+/* Ornamental divider: two lines around a rotated square */
+
+.services-divider {
+    position: relative;
+
+    display: block;
+
+    width: 160px;
+    height: 1px;
+
+    margin: 18px auto;
+
+    background: linear-gradient(
+        90deg,
+        transparent,
+        var(--color-gold) 30%,
+        var(--color-gold) 70%,
+        transparent
+    );
+}
+
+.services-divider::before {
+    content: "";
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    width: 10px;
+    height: 10px;
+
+    background-color: var(--color-ivory);
+    border: 1px solid var(--color-gold);
+
+    transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.services-intro {
+    margin: 0;
+
+    color: var(--color-charcoal);
+
+    font-size: clamp(16px, 1.5vw, 18px);
+    line-height: 1.9;
+}
+
+/* Grid */
+
+.services-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 24px;
+
+    margin: 0;
+    padding: 0;
+
+    list-style: none;
+}
+
+/* Card */
+
+.service-card {
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    gap: 14px;
+
+    margin: 0;
+    padding: 32px 24px 28px;
+
+    overflow: hidden;
+
+    background-color: var(--color-white);
+    border: 1px solid var(--color-border);
+    border-radius: 6px;
+
+    transition:
+        border-color var(--transition-fast),
+        box-shadow var(--transition-fast);
+}
+
+/* Gold accent line at the start (right in RTL) */
+
+.service-card::before {
+    content: "";
+
+    position: absolute;
+    top: 0;
+    inset-inline-start: 24px;
+
+    width: 48px;
+    height: 3px;
+
+    background-color: var(--color-gold);
+
+    transition: width var(--transition-fast);
+}
+
+/* Corner ornament */
+
+.service-card::after {
+    content: "";
+
+    position: absolute;
+    top: -22px;
+    left: -22px;
+
+    width: 52px;
+    height: 52px;
+
+    border: 1px solid rgba(198, 161, 91, 0.4);
+
+    transform: rotate(45deg);
+
+    pointer-events: none;
+}
+
+.service-card:hover {
+    border-color: var(--color-gold);
+    box-shadow: 0 14px 32px rgba(17, 28, 50, 0.1);
+}
+
+.service-card:hover::before {
+    width: 96px;
+}
+
+/* Icon: octagonal navy badge */
+
+.service-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    width: 56px;
+    height: 56px;
+
+    background-color: var(--color-navy);
+    color: var(--color-gold);
+
+    clip-path: polygon(
+        30% 0, 70% 0, 100% 30%, 100% 70%,
+        70% 100%, 30% 100%, 0 70%, 0 30%
+    );
+}
+
+.service-title {
+    margin: 4px 0 0;
+
+    color: var(--color-navy);
+
+    font-size: 19px;
+    font-weight: 800;
+    line-height: 1.6;
+}
+
+.service-text {
+    margin: 0;
+
+    color: var(--color-charcoal);
+
+    font-size: 15px;
+    line-height: 1.9;
+}
+
+/* Availability badge (rendered only when a status is set) */
+
+.service-status {
+    display: inline-block;
+
+    margin-top: auto;
+    padding: 2px 12px;
+
+    border: 1px solid currentColor;
+    border-radius: 999px;
+
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 1.8;
+}
+
+.service-status-ready {
+    color: var(--color-turquoise);
+}
+
+.service-status-developing {
+    color: var(--color-burgundy);
+}
+
+.service-status-roadmap {
+    color: var(--color-muted);
+}
+
+/* Services Responsive */
+
+@media (min-width: 640px) {
+
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+@media (min-width: 992px) {
+
+    .services-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 28px;
+    }
+
+}
+
+
+/* Reduced Motion */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .hero-button,
+    .service-card,
+    .service-card::before {
+        transition: none;
+    }
+
+}
