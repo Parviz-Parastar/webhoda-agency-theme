@@ -1,36 +1,56 @@
 # WEBHODA — Shared Project Hub
 
 ## Purpose
-This directory is the shared coordination layer. It does not replace the approved technical architecture or theme source code.
+This directory is the canonical coordination source for WEBHODA. Shared project records are maintained here in GitHub, not as separate ChatGPT or Claude copies.
 
-## Source-of-truth order
-1. Latest explicit owner-approved decision.
-2. Approved decisions in DECISIONS.md.
-3. Approved technical architecture at ../MASTER-TECHNICAL-ARCHITECTURE.md.
-4. Verified project state in PROJECT-STATUS.md, checked against repository and local test evidence.
-5. Active work in TASKS.md.
+## Canonical records
+- [Project Status](PROJECT-STATUS.md): verified current state, evidence, tests, and open issues.
+- [Decision Register](DECISIONS.md): owner-approved decisions and unresolved conflicts.
+- [Active Tasks](TASKS.md): current work, ownership, blockers, and acceptance evidence.
+- [Roadmap](ROADMAP.md): ordered phases and planned outcomes; not a completion record.
+- [Collaboration Workflow](WORKFLOW.md): rules for all collaborators.
+- [Master Technical Architecture](../MASTER-TECHNICAL-ARCHITECTURE.md): approved technical architecture v1.1.
 
-The existing implementation status document remains at ../docs/WEBHODA-PROJECT-STATUS.md. Do not create competing copies.
+## Source-of-truth rules
+1. The latest explicit owner-approved decision takes precedence.
+2. Approved decisions are recorded in DECISIONS.md.
+3. The approved technical architecture governs technical structure and constraints.
+4. PROJECT-STATUS.md records actual state and must distinguish repository evidence from LocalWP/browser verification.
+5. TASKS.md records active work; ROADMAP.md records the broader plan.
+6. Proposals, assumptions, and unverified reports must never be presented as approved facts.
+
+## Mandatory collaboration cycle
+### Before work
+1. Read this README, PROJECT-STATUS.md, DECISIONS.md, and TASKS.md.
+2. Read ROADMAP.md and the architecture when relevant.
+3. Check the latest main commit and the current versions of relevant files.
+4. State scope, allowed files, risks, and test plan.
+
+### During work
+- Preserve approved decisions and existing functionality.
+- Audit is read-only; implementation is limited to an explicitly approved scope.
+- Do not infer local state from GitHub or claim tests that were not run.
+- Do not create parallel copies of canonical records in personal/project knowledge stores.
+
+### At the end of work
+Update the relevant canonical GitHub records with:
+- work completed and its evidence;
+- files changed;
+- tests actually run and observed results;
+- owner decisions and approvals;
+- blockers and next action.
 
 ## Roles
-- Owner: final authority; approves scope, decisions, and acceptance.
-- ChatGPT: reads this hub before work, audits evidence, reviews changes, and updates records when GitHub write access is available.
-- Claude: reads the latest hub files available at task start; works only within assigned scope; never commits or pushes.
+- Owner: final authority; controls LocalWP acceptance and GitHub commit/push unless explicitly authorizing another route.
+- ChatGPT: architecture, audit, code review, evidence checks, and maintenance of shared records when authorized and connected.
+- Claude: analysis and implementation within the assigned scope; no commit or push.
 
-## Mandatory cycle
-1. Read README, PROJECT-STATUS, DECISIONS, and TASKS before starting.
-2. Confirm the latest main commit and check for newer records.
-3. Never treat proposals as approved decisions.
-4. Record work as proposed / in progress / blocked / verified / owner-approved. Never claim an unrun test passed.
-5. After work, update relevant records with evidence, files changed, tests run, open issues, and next action.
-6. Owner applies local changes and controls GitHub Desktop commit/push unless explicitly authorizing another route.
+## Claude and synchronization
+GitHub is the canonical source, but this does not prove that Claude Chat Free has live access to the repository. Verify the actual access method in the user's Claude environment. If direct access is unavailable, provide the current canonical files or links for that task. Never claim automatic/background synchronization.
 
 ## Safety
 - Never overwrite owner-approved decisions silently.
-- Never delete or replace existing project documents during routine status updates.
+- Never delete historical or source documents during routine updates.
 - Keep code changes separate from project-management documentation.
-- If local state differs from GitHub, report the mismatch.
-- Never store passwords, tokens, private keys, or secrets here.
-
-## Claude access limitation
-This repository is canonical, but a free Claude Chat session does not automatically gain live GitHub access. Until a verified integration exists in that Claude environment, the owner must provide the current hub files or links. Never claim automatic synchronization.
+- If LocalWP differs from GitHub, report the mismatch.
+- Never store passwords, tokens, private keys, or other secrets here.
