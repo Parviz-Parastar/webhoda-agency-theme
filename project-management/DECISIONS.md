@@ -27,6 +27,48 @@ Only explicit owner-approved decisions belong in the approved register. Suggesti
 | TECH-002 | Use custom structured CSS. Do not add Bootstrap or Tailwind for now. | APPROVED |
 | TECH-003 | A build tool or additional framework is not approved unless a concrete technical need is established and the owner approves it. | APPROVED |
 
+## Approved Why WEBHODA copy — exact owner-supplied text
+
+The following is transcribed from the owner-provided `template-parts/home/why-webhoda.php` source. Preserve the Persian wording exactly; PHP translation wrappers and markup are omitted, but the visible copy is retained verbatim.
+
+**Section eyebrow**
+
+> چرا وب هُدیٰ؟
+
+**Section heading**
+
+> همراه شما در مسیر رشد؛ فراتر از یک همکاری دیجیتال
+
+**Introduction**
+
+> ما در وب هُدیٰ، فناوری، استراتژی و خلاقیت را در کنار هم قرار می‌دهیم تا کسب‌وکار شما حضوری مؤثرتر در فضای دیجیتال داشته باشد، مشتریان بیشتری جذب کند و برای رشد پایدار آماده شود.
+
+**Pillar 01 — شناخت کسب‌وکار، پیش از آغاز راه**
+
+> هر کسب‌وکار مسیر و نیازهای منحصربه‌فرد خود را دارد. پیش از هر اقدامی، اهداف، مخاطبان و ظرفیت‌های کسب‌وکار شما را بررسی می‌کنیم تا راهکارها بر پایه شناخت و متناسب با واقعیت‌های شما شکل بگیرند.
+
+**Pillar 02 — تمرکز بر نتیجه و ارزش‌آفرینی**
+
+> زیبایی و کیفیت اجرا، تنها بخشی از یک راهکار موفق است. طراحی و بازاریابی باید به اهداف واقعی کسب‌وکار کمک کنند؛ از افزایش دیده‌شدن و جذب مشتری تا بهبود تجربه مخاطب و تقویت مسیر فروش.
+
+**Pillar 03 — پیوند استراتژی، خلاقیت و فناوری**
+
+> از طراحی وب‌سایت و بهینه‌سازی موتورهای جست‌وجو تا تولید محتوا و ابزارهای هوشمند، راهکارهای دیجیتال را در مسیری منسجم به هم پیوند می‌دهیم تا هر بخش، مکمل بخش دیگر باشد.
+
+**Pillar 04 — رشد مستمر، نه یک تحویل مقطعی**
+
+> همکاری را با تحویل یک پروژه پایان‌یافته نمی‌دانیم. بررسی عملکرد، تحلیل داده‌ها و بهبود مستمر، زمینه تصمیم‌گیری دقیق‌تر و حرکت هدفمندتر کسب‌وکار شما را فراهم می‌کند.
+
+**Pledge heading**
+
+> تعهد ما؛ صداقت در مسیر، امانت‌داری در همکاری
+
+**Pledge text**
+
+> نام وب هُدیٰ یادآور مفهوم هدایت است؛ مفهومی که در نگاه ما با مسئولیت‌پذیری، شفافیت و خدمت صادقانه معنا پیدا می‌کند. به همین دلیل، آنچه ارائه می‌دهیم بر پایه واقعیت، تخصص و تعهد است؛ نه وعده‌های اغراق‌آمیز و نتایج تضمین‌نشده.
+
+---
+
 ## Approved source documents
 - Technical architecture: [MASTER-TECHNICAL-ARCHITECTURE.md v1.1](../MASTER-TECHNICAL-ARCHITECTURE.md).
 - The exact approved Why WEBHODA copy must remain unchanged. Its complete text was not present in the source material available during this reconciliation, and repository search did not locate it. Therefore, the copy has **not** been migrated or reconstructed. Keep CONTENT-001 in force and block retirement of the legacy source until the owner supplies the exact copy or its authoritative source is located.
