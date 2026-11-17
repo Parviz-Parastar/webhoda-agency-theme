@@ -81,20 +81,36 @@ Repository observations from the prior static audit:
 - Older project context documents may contain outdated Bootstrap references or phase gates. The approved architecture and DECISIONS.md take precedence.
 - Claude's practical live GitHub access is not yet verified. A GitHub Project Knowledge source being configured is not sufficient evidence that Claude can always retrieve the latest branch content.
 
-## 7. Current coordination state
+## 7. Additional source material received — pending reconciliation
+
+The owner supplied a document named `WEBHODA_CURRENT_THEME_SOURCE.txt` containing a snapshot of these theme files: `style.css`, `functions.php`, `header.php`, `footer.php`, `front-page.php`, `index.php`, `search.php`, `assets/css/home.css`, and `template-parts/home/hero.php`.
+
+This is owner-supplied source text, not a fresh fetch of the LocalWP working tree or current GitHub branch. Its own recorded path points to the LocalWP theme directory, but its currentness and parity with GitHub have not been verified.
+
+Notable observations from that supplied snapshot:
+- `front-page.php` calls only the Hero template part; it does not call a Services template part.
+- The supplied `template-parts/home/hero.php` contains the Hero section only.
+- The supplied `header.php` has no visible Skip Link.
+- The supplied `style.css` uses Tahoma and Georgia tokens and a single gold `:focus-visible` outline; it does not show the proposed two-layer focus treatment.
+- `assets/css/home.css` includes a reduced-motion rule for Hero buttons.
+- `index.php` contains placeholder English content.
+
+These observations conflict with later repository audit notes that describe Services and Why template parts in `front-page.php`, and with historical status statements about accessibility. Do not choose one as current without fetching the relevant files from the current GitHub branch and checking LocalWP. No runtime or browser test was performed from this source text.
+
+## 8. Current coordination state
 - Shared project hub: created and re-fetched from GitHub.
 - Canonical source-of-truth policy: owner-approved; see DECISIONS.md.
 - Architecture v1.1: approved and retained without duplication.
-- Decision register: reconciliation in progress; owner-approved decisions are being consolidated from the supplied decision source and confirmed project records.
+- Decision register: reconciliation in progress; verified brand claim rules and the detailed Hero living-being constraint have been consolidated. The exact approved Why WEBHODA copy remains unmigrated because its full source text was not available.
 - Project Knowledge cleanup: not performed. Do not delete standalone uploads until canonical equivalents are complete, verified on GitHub, and selected in the connected GitHub source.
 - LocalWP-to-GitHub reconciliation: not performed.
 
-## 8. Next actions
+## 9. Next actions
 1. Complete review of all Claude Project Knowledge documents against the canonical GitHub records.
 2. Confirm Claude's actual access method to the selected GitHub source.
 3. Compare LocalWP working tree with the verified GitHub main commit.
 4. Refresh implementation status only from new repository/local/browser evidence.
 5. Remove redundant standalone Project Knowledge uploads only after the matching canonical GitHub documents are complete and accessible; retain unique instructions/context until migrated.
 
-## 9. Update protocol
+## 10. Update protocol
 At the end of each meaningful work session, update this file and the relevant decision/task/roadmap records in GitHub. Record only work actually performed and evidence observed. Do not maintain separate status copies for ChatGPT or Claude.
