@@ -71,7 +71,7 @@ The following is transcribed from the owner-provided `template-parts/home/why-we
 
 ## Approved source documents
 - Technical architecture: [MASTER-TECHNICAL-ARCHITECTURE.md v1.1](../MASTER-TECHNICAL-ARCHITECTURE.md).
-- The exact approved Why WEBHODA copy must remain unchanged. Its complete text was not present in the source material available during this reconciliation, and repository search did not locate it. Therefore, the copy has **not** been migrated or reconstructed. Keep CONTENT-001 in force and block retirement of the legacy source until the owner supplies the exact copy or its authoritative source is located.
+- The complete owner-approved Why WEBHODA copy is recorded verbatim in the section above, transcribed from the owner-supplied theme template. CONTENT-001 remains in force: do not rewrite this copy without explicit owner permission.
 
 ## Open questions — not decisions
 - Whether the hero visual constraint V-005 is fully consistent across all historical architecture versions; the latest explicit owner-approved decision takes precedence.
