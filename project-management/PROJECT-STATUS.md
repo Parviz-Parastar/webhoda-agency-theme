@@ -114,3 +114,52 @@ These observations conflict with later repository audit notes that describe Serv
 
 ## 10. Update protocol
 At the end of each meaningful work session, update this file and the relevant decision/task/roadmap records in GitHub. Record only work actually performed and evidence observed. Do not maintain separate status copies for ChatGPT or Claude.
+
+## 11. Documentation reconciliation — 2026-11-20
+
+### Sources inspected
+- Shared project hub README.
+- Canonical project status, decision register, roadmap, and collaboration workflow files available in the Dropbox project snapshot.
+- Root technical architecture v1.1 available in that snapshot.
+- Owner-approved extended Level 1 Gutenberg decision recorded in the project conversation.
+- Owner-provided local Git status, branch information, commit history, and documentation diffs.
+
+### Confirmed documentation findings
+- GitHub is the canonical shared source for project documentation.
+- The approved Decision Register already establishes the Persian and English font families and local font hosting. Font integration and license verification remain implementation tasks.
+- The approved extended Level 1 Gutenberg model refines the earlier controlled Gutenberg architecture without converting the site into a Block Theme or full Full Site Editing implementation.
+- The approved architecture addendum preserves the v1.1 document history.
+- The approved Why WEBHODA copy remains unchanged and must be preserved exactly.
+- The Roadmap implementation sequence has been revised so the Gutenberg content foundation is established before page content is implemented.
+- The initial release scope remains distinct from the long-term roadmap.
+
+### Local documentation update
+The owner applied the documentation reconciliation patch locally to these six files:
+
+- `MASTER-TECHNICAL-ARCHITECTURE.md`
+- `project-management/DECISIONS.md`
+- `project-management/PROJECT-STATUS.md`
+- `project-management/ROADMAP.md`
+- `project-management/TASKS.md`
+- `project-management/WORKFLOW.md`
+
+The observed local Git state was:
+
+- Current branch: `docs/reconcile-single-source-of-truth`
+- HEAD: `458786b` — `docs: record approved WEBHODA collaboration roles`
+- The branch is 12 commits ahead of `origin/main`; `origin/main` has no commits ahead of the current branch according to the reported `git rev-list --left-right --count origin/main...HEAD` result.
+- Six tracked documentation files are modified.
+- `project-management/DECISIONS.md.backup-20261117-203107` remains untracked and must be preserved. It must not be staged, committed, or deleted as part of this task.
+- `git diff --check` completed without reported errors after the trailing blank-line correction in `DECISIONS.md`.
+
+### Evidence limitations
+- The branch and working-tree information above is based on command output supplied by the owner; no independent live GitHub fetch was performed by the assistant.
+- The local documentation changes have not yet been committed or pushed.
+- The latest canonical GitHub state has therefore not yet been re-fetched and verified against these local changes.
+- No WordPress runtime, browser, accessibility, responsive, performance, or security tests were performed as part of this documentation update.
+- No direct changes were made by the assistant to LocalWP, Dropbox, or GitHub.
+
+### Next coordination action
+Complete the review of all six modified documentation files. After owner approval, the owner may commit and push the approved documentation changes through GitHub Desktop, keeping the untracked backup file excluded. Then re-fetch the canonical GitHub files and verify that the shared documentation matches the approved local version.
+
+Do not mark documentation reconciliation complete until this verification is performed.

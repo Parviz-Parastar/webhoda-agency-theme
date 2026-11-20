@@ -594,3 +594,30 @@ Claude نباید Commit یا Push انجام دهد. اعمال تغییرات 
 4. برای هر مرحله مأموریت محدود و قابل آزمون تعریف خواهد شد.
 
 **اصل نهایی:** هیچ ساختار، فناوری یا قابلیت جدیدی بدون نیاز فنی مشخص و تأیید کاربر به پروژه تحمیل نمی‌شود.
+
+## Addendum — Owner-approved extended Gutenberg implementation
+
+The owner has explicitly approved the extended Level 1 implementation model. This decision refines the controlled Gutenberg support described in v1.1 and is binding for subsequent implementation planning.
+
+- The site remains a Classic PHP Theme.
+- Gutenberg is the primary editor for page content. The owner must be able to create and edit the content and composition of all pages and their content sections through the WordPress editor.
+- PHP templates remain responsible for the global rendering shell, template hierarchy, and template-level structure. Page content must be rendered through the normal WordPress content flow where appropriate; it must not be unnecessarily hardcoded into PHP template parts.
+- Core Blocks are preferred. Patterns are used for reusable compositions; Synced Patterns are reserved for content that genuinely needs to remain synchronized.
+- Custom Blocks are permitted only when a demonstrated recurring, data-driven, or interactive requirement cannot be reasonably met with Core Blocks and Patterns.
+- Header, Footer, and global settings must be manageable through WordPress administration, including logo, navigation, brand colors, and contact information. Their implementation must remain compatible with the approved Classic Theme model.
+- This decision does not approve a Block Theme conversion or full Full Site Editing.
+- The Theme remains responsible for presentation and editor integration. A separate plugin for business logic or persistent structured data requires a concrete need and separate owner approval. `agency-core` is not approved.
+- Start with Pages and Posts. Add CPTs, taxonomies, and structured fields only when an evidenced content or workflow requirement justifies them.
+
+### Clarifications to existing architecture
+
+- `TYPE-001` and `TYPE-002` in the approved Decision Register govern typography: Estedad/Vazirmatn for Persian and Inter/Plus Jakarta Sans for English, hosted locally. The architecture text that says font selection is still undecided is superseded by these later approved decisions. License and technical integration verification remain implementation tasks.
+- `theme.json` remains subject to technical assessment; it is not automatically required.
+- Bootstrap, Tailwind, build tools, and additional frameworks remain unapproved unless a concrete need is established and the owner approves.
+- The six-section homepage information architecture in DESIGN-003 remains unchanged.
+- The initial release scope must be distinguished from the long-term roadmap. Do not treat CRM, customer portals, or complex standalone systems as initial-release requirements.
+- The brand slogan “مسیر روشن‌تر، رشد هوشمندانه‌تر” remains proposed until explicit owner approval.
+
+### Implementation consequence
+
+The current static homepage implementation, in which content sections are fixed in PHP and cannot be freely authored in Gutenberg, does not yet satisfy this approved editor model. This is a known implementation gap, not a reason to change the approved architecture.

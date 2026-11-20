@@ -31,6 +31,13 @@ Only explicit owner-approved decisions belong in the approved register. Suggesti
 | TECH-002 | Use custom structured CSS. Do not add Bootstrap or Tailwind for now. | APPROVED |
 | TECH-003 | A build tool or additional framework is not approved unless a concrete technical need is established and the owner approves it. | APPROVED |
 
+| TECH-004 | The site remains a Classic PHP Theme with the owner-approved extended Level 1 Gutenberg implementation. Gutenberg must allow the owner to create and edit the content of all pages and their content sections. PHP templates remain responsible for the site template structure and rendering shell. This does not approve a Block Theme or full Full Site Editing migration. | APPROVED |
+| TECH-005 | Reusable content compositions should use WordPress Core Blocks and Patterns; Synced Patterns may be used for genuinely shared content. Custom Blocks require a demonstrated recurring, data-driven, or interactive need that Core Blocks and Patterns cannot reasonably satisfy. | APPROVED |
+| TECH-006 | Header, Footer, and global site settings must be manageable from WordPress administration, including the logo, navigation, brand colors, and contact information. The implementation method must use an appropriate WordPress-native approach and remain within the approved Classic Theme architecture. | APPROVED |
+| TECH-007 | The Theme owns presentation, templates, styles, and editor integration. Business logic and data that must survive a theme change may be placed in a separate plugin only when a concrete requirement justifies it. The custom `agency-core` plugin is not approved at this time. | APPROVED |
+| CONTENT-003 | The initial release scope is limited to Home, About, Contact, services confirmed as genuinely ready, real portfolio/case-study material with publication permission, a quality-controlled Knowledge Center scope, and necessary legal pages. CRM, customer portals, complex operational systems, and standalone products remain future roadmap items unless separately approved. | APPROVED |
+| CONTENT-004 | Pages and Posts are the initial content foundation. CPTs, taxonomies, and structured fields must be introduced only when an evidenced requirement such as independent archives, fixed fields, relationships, filtering, or a separate lifecycle justifies them. | APPROVED |
+
 ## Approved Why WEBHODA copy — exact owner-supplied text
 
 The following is transcribed from the owner-provided `template-parts/home/why-webhoda.php` source. Preserve the Persian wording exactly; PHP translation wrappers and markup are omitted, but the visible copy is retained verbatim.
@@ -85,6 +92,16 @@ The following is transcribed from the owner-provided `template-parts/home/why-we
 - Final CSS module/loading structure.
 - Final local font integration and license verification.
 - Exact implementation scope and sequence for Services, Portfolio, Contact, and CTA.
+- The exact need and scope of `theme.json` after reviewing the actual WordPress and theme versions.
+- The number and types of required Patterns and Synced Patterns.
+- Any specific Custom Block requirement.
+- Any specific CPT/Taxonomy requirement.
+- Second language and LTR scope.
+- Final CSS structure and asset-loading method.
+- Timing and implementation details for Header/Footer administration.
+- Final brand slogan.
+- “مسیر روشن‌تر، رشد هوشمندانه‌تر” is proposed and is not APPROVED until explicit owner approval.
+- “رشد دیجیتال، با هدایت الهی” must not be used in the public header without renewed owner approval.
 
 ## Change control
 Never convert a proposal into an approved decision. When the owner approves a new decision, add it here with a stable ID, date/context if useful, and a concise statement. If a decision is superseded, retain its history and mark it SUPERSEDED rather than silently deleting it.
