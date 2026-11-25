@@ -80,8 +80,12 @@ function agency_theme_hero_image_shortcode() {
 
     $hero_image = get_template_directory_uri() . '/assets/images/hero/hero-hall.webp';
 
+    /*
+     * Intrinsic dimensions (1672x941) reserve layout space and prevent
+     * layout shift before the LCP image loads.
+     */
     return sprintf(
-        '<img class="hero-architecture-image" src="%1$s" alt="" fetchpriority="high" decoding="async">',
+        '<img class="hero-architecture-image" src="%1$s" width="1672" height="941" alt="" fetchpriority="high" decoding="async">',
         esc_url($hero_image)
     );
 }

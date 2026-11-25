@@ -53,6 +53,10 @@
 
 /* Dark Overlay */
 
+/*
+ * Strengthened slightly (HOME-001) so light text keeps contrast across
+ * the bright upper arches of the hall image, without hiding the image.
+ */
 .hero-overlay {
     position: absolute;
     inset: 0;
@@ -67,8 +71,8 @@
     background:
         linear-gradient(
             180deg,
-            rgba(17, 28, 50, 0.12),
-            rgba(17, 28, 50, 0.30)
+            rgba(17, 28, 50, 0.28),
+            rgba(17, 28, 50, 0.44)
         );
 }
 
@@ -88,6 +92,21 @@
 
     text-align: center;
     direction: rtl;
+
+    /* One gentle entrance (HOME-001); disabled for reduced motion below. */
+    animation: webhoda-hero-in 0.7s ease-out both;
+}
+
+@keyframes webhoda-hero-in {
+    from {
+        opacity: 0;
+        transform: translateY(14px);
+    }
+
+    to {
+        opacity: 1;
+        transform: none;
+    }
 }
 
 /* Brand */
@@ -501,6 +520,28 @@
         transition: none;
     }
 
+    /* HOME-001: skip the hero entrance animation entirely. */
+    .hero-central-content {
+        animation: none;
+    }
+
+}
+
+
+/* ========================================
+   HOME-001 — ANCHOR SCROLL OFFSET
+======================================== */
+
+/*
+ * Smooth scrolling to section anchors (e.g. "آشنایی با خدمات") must not
+ * hide the section top edge; a small offset keeps the target visible.
+ */
+#hero,
+#services,
+#why-webhoda,
+#portfolio,
+#cta {
+    scroll-margin-top: 24px;
 }
 
 
