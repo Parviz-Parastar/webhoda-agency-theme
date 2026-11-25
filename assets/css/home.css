@@ -1115,3 +1115,42 @@
     }
 
 }
+
+/* TECH-004: Gutenberg editable link compatibility */
+
+/* ========================================
+   TECH-004: Gutenberg editable link compatibility
+======================================== */
+
+/*
+ * Hero and CTA links are editable paragraph blocks.
+ * Their existing visual classes remain on the paragraph wrappers.
+ */
+
+.hero-brand-name,
+.hero-brand-persian {
+    margin: 0;
+}
+
+.hero-brand-name a,
+.hero-brand-persian a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.hero-button,
+.cta-button {
+    margin: 0;
+}
+
+.hero-button a,
+.cta-button a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-height: inherit;
+    padding: inherit;
+    color: inherit;
+    text-decoration: none;
+}

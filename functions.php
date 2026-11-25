@@ -35,6 +35,7 @@ function agency_theme_setup_extra() {
     // Controlled Gutenberg (TECH-004/TECH-005): approved tokens inside the editor
     add_theme_support('editor-styles');
     add_editor_style('style.css');
+    add_editor_style('assets/css/home.css');
 
     add_theme_support('align-wide');
 }
@@ -73,6 +74,19 @@ function agency_theme_enqueue_styles() {
 add_action('wp_enqueue_scripts', 'agency_theme_enqueue_styles');
 
 
+
+// Dynamic Hero image URL: remains portable across local and production domains.
+function agency_theme_hero_image_shortcode() {
+
+    $hero_image = get_template_directory_uri() . '/assets/images/hero/hero-hall.webp';
+
+    return sprintf(
+        '<img class="hero-architecture-image" src="%1$s" alt="" fetchpriority="high" decoding="async">',
+        esc_url($hero_image)
+    );
+}
+
+add_shortcode('webhoda_hero_image', 'agency_theme_hero_image_shortcode');
 // Contact form (shortcode [webhoda_contact_form])
 require_once get_template_directory() . '/inc/contact-form.php';
 
