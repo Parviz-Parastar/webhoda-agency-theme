@@ -12,7 +12,11 @@ get_header();
 
     <?php get_template_part('template-parts/home/services'); ?>
 
+    <?php get_template_part('template-parts/home/portfolio'); ?>
+
     <?php get_template_part('template-parts/home/why-webhoda'); ?>
+
+    <?php get_template_part('template-parts/home/cta'); ?>
 
 </main>
 

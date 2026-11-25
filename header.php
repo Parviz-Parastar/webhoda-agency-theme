@@ -23,17 +23,25 @@
         <!-- Brand -->
         <div class="site-branding">
 
-            <a
-                class="brand-link"
-                href="<?php echo esc_url(home_url('/')); ?>"
-                aria-label="<?php echo esc_attr__('WEBHODA - صفحه اصلی', 'agency-theme'); ?>"
-            >
-                <span class="brand-name">WEBHODA</span>
+            <?php if ( has_custom_logo() ) : ?>
 
-                <span class="brand-tagline">
-                    رشد دیجیتال، با هدایت الهی
-                </span>
-            </a>
+                <?php the_custom_logo(); ?>
+
+            <?php else : ?>
+
+                <a
+                    class="brand-link"
+                    href="<?php echo esc_url(home_url('/')); ?>"
+                    aria-label="<?php echo esc_attr__('WEBHODA - صفحه اصلی', 'agency-theme'); ?>"
+                >
+                    <span class="brand-name">WEBHODA</span>
+
+                    <span class="brand-tagline">
+                        مسیر هوشمندانه رشد کسب‌وکار
+                    </span>
+                </a>
+
+            <?php endif; ?>
 
         </div>
 

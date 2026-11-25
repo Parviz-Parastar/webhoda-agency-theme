@@ -26,10 +26,10 @@ $hero_image = get_template_directory_uri() . '/assets/images/hero/hero-hall.webp
                 <a
                     class="hero-brand"
                     href="<?php echo esc_url(home_url('/')); ?>"
-                    aria-label="<?php echo esc_attr__('صفحه اصلی وب هدا', 'agency-theme'); ?>"
+                    aria-label="<?php echo esc_attr__('صفحه اصلی وب هُدیٰ', 'agency-theme'); ?>"
                 >
                     <span class="hero-brand-name">WEBHODA</span>
-                    <span class="hero-brand-persian">وب هدا</span>
+                    <span class="hero-brand-persian">وب هُدیٰ</span>
                 </a>
 
                 <h1 id="hero-title" class="hero-title">

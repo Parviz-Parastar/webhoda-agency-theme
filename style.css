@@ -10,6 +10,53 @@ Text Domain: agency-theme
 
 
 /* ========================================
+   0. LOCAL FONTS (TYPE-001 / TYPE-002)
+======================================== */
+
+/*
+ * Approved font stack (TYPE-001), hosted locally (TYPE-002), no font CDN.
+ * Variable-font WOFF2 files only, to keep requests minimal. All families
+ * carry their own license file in assets/fonts/*/ (OFL.txt / LICENSE.txt).
+ * font-display: swap keeps text readable while fonts load.
+ *
+ * Estedad (variable) covers Persian; Inter (variable) covers Latin.
+ * Vazirmatn and Plus Jakarta Sans are the approved fallbacks.
+ */
+
+@font-face {
+    font-family: 'Estedad';
+    src: url('assets/fonts/estedad/Estedad[wght].woff2') format('woff2-variations');
+    font-weight: 100 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Vazirmatn';
+    src: url('assets/fonts/vazirmatn/Vazirmatn[wght].woff2') format('woff2-variations');
+    font-weight: 100 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Inter';
+    src: url('assets/fonts/inter/InterVariable.woff2') format('woff2-variations');
+    font-weight: 100 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Plus Jakarta Sans';
+    src: url('assets/fonts/plus-jakarta-sans/PlusJakartaSans[wght].woff2') format('woff2-variations');
+    font-weight: 200 800;
+    font-style: normal;
+    font-display: swap;
+}
+
+
+/* ========================================
    1. BRAND DESIGN TOKENS
 ======================================== */
 
@@ -30,10 +77,10 @@ Text Domain: agency-theme
     --color-muted: #77736C;
     --color-border: #DED5C6;
 
-    /* Typography */
+    /* Typography (TYPE-001: Estedad → Vazirmatn, Inter → Plus Jakarta Sans) */
 
-    --font-primary: Tahoma, Arial, sans-serif;
-    --font-secondary: Georgia, serif;
+    --font-primary: 'Estedad', 'Vazirmatn', 'Inter', 'Plus Jakarta Sans', Tahoma, Arial, sans-serif;
+    --font-secondary: 'Inter', 'Plus Jakarta Sans', Georgia, serif;
 
     /* Layout */
 
@@ -515,13 +562,124 @@ input:focus-visible {
 ======================================== */
 
 #site-footer {
-    padding: 20px;
-
-    direction: rtl;
-    text-align: center;
+    margin-top: auto;
 
     background-color: var(--color-navy);
     color: var(--color-white);
+
+    direction: rtl;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+
+    gap: 36px;
+
+    padding-top: 48px;
+    padding-bottom: 40px;
+}
+
+.footer-brand-name {
+    margin: 0;
+
+    font-family: var(--font-secondary);
+    font-size: 24px;
+    font-weight: 700;
+    letter-spacing: 2px;
+
+    color: var(--color-ivory);
+}
+
+.footer-tagline {
+    margin: 4px 0 0;
+
+    color: var(--color-gold);
+
+    font-size: 12px;
+}
+
+.footer-about {
+    max-width: 380px;
+    margin: 14px 0 0;
+
+    color: rgba(244, 235, 221, 0.8);
+
+    font-size: 13px;
+    line-height: 1.9;
+}
+
+.footer-heading {
+    margin: 0 0 14px;
+
+    color: var(--color-gold);
+
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.footer-menu {
+    margin: 0;
+    padding: 0;
+
+    list-style: none;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 10px;
+}
+
+.footer-menu a {
+    color: rgba(244, 235, 221, 0.85);
+
+    font-size: 14px;
+
+    transition: color var(--transition-fast);
+}
+
+.footer-menu a:hover {
+    color: var(--color-gold);
+}
+
+.footer-bottom {
+    padding: 16px 0;
+
+    border-top: 1px solid rgba(198, 161, 91, 0.35);
+
+    text-align: center;
+}
+
+.footer-copyright {
+    margin: 0;
+
+    color: rgba(244, 235, 221, 0.75);
+
+    font-size: 13px;
+}
+
+/* Custom logo (TECH-006) */
+
+.site-branding .custom-logo-link {
+    display: inline-block;
+}
+
+.site-branding .custom-logo {
+    max-width: 200px;
+    max-height: 64px;
+
+    width: auto;
+    height: auto;
+}
+
+@media (min-width: 900px) {
+
+    .footer-grid {
+        grid-template-columns: 2fr 1fr 1fr 1fr;
+
+        gap: 32px;
+    }
+
 }
 
 
@@ -758,6 +916,62 @@ input:focus-visible {
     color: var(--color-muted);
 }
 
+/* 404 / empty-state search form: theme-consistent styling */
+
+.search-no-results form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    gap: 8px;
+
+    max-width: 420px;
+    margin: 0 auto 20px;
+}
+
+.search-no-results input[type="search"] {
+    flex: 1 1 220px;
+
+    padding: 10px 12px;
+
+    border: 1px solid var(--color-border);
+    border-radius: 4px;
+
+    background-color: var(--color-white);
+    color: var(--color-charcoal);
+
+    font-family: inherit;
+    font-size: 14px;
+}
+
+.search-no-results form button {
+    padding: 10px 20px;
+
+    border: 1px solid var(--color-gold);
+    border-radius: 4px;
+
+    background-color: var(--color-gold);
+    color: var(--color-navy);
+
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition:
+        color var(--transition-fast),
+        background-color var(--transition-fast),
+        border-color var(--transition-fast);
+}
+
+.search-no-results form button:hover {
+    background-color: transparent;
+    color: var(--color-gold);
+    border-color: var(--color-gold);
+}
+
 .search-pagination {
     margin-top: 40px;
     text-align: center;
@@ -787,7 +1001,366 @@ input:focus-visible {
 
 
 /* ========================================
-   14. REDUCED MOTION
+   14. SERVICES PAGE
+======================================== */
+
+/*
+ * Standalone services page (page-services.php). Navy hero band with the
+ * same eight-pointed geometric motif as the homepage Why section, ivory
+ * grid section, then the CTA component.
+ */
+
+/* ID + class selector outranks the global #site-content rule. */
+
+#site-content.services-page {
+    padding: 0;
+    min-height: 0;
+}
+
+.services-page-hero {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+
+    padding: clamp(56px, 8vw, 96px) 0;
+
+    background-color: var(--color-navy);
+    background-image:
+        radial-gradient(ellipse 70% 55% at 50% 0%, rgba(23, 111, 112, 0.22), transparent 70%);
+
+    color: var(--color-ivory);
+
+    border-bottom: 1px solid rgba(198, 161, 91, 0.45);
+}
+
+.services-page-hero-pattern {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+
+    width: 100%;
+    height: 100%;
+
+    color: var(--color-gold);
+    opacity: 0.1;
+
+    pointer-events: none;
+
+    -webkit-mask-image: radial-gradient(ellipse at center, transparent 20%, #000 90%);
+    mask-image: radial-gradient(ellipse at center, transparent 20%, #000 90%);
+}
+
+.services-page-hero-inner {
+    max-width: 780px;
+
+    margin: 0 auto;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    gap: 12px;
+
+    text-align: center;
+}
+
+.services-page-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 14px;
+
+    margin: 0 0 6px;
+
+    color: var(--color-gold);
+
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.services-page-eyebrow::before,
+.services-page-eyebrow::after {
+    content: "";
+
+    width: 28px;
+    height: 1px;
+
+    background-color: rgba(198, 161, 91, 0.6);
+}
+
+.services-page-title {
+    margin: 0;
+
+    color: var(--color-white);
+
+    font-size: clamp(26px, 3.4vw, 40px);
+    font-weight: 800;
+    line-height: 1.6;
+
+    text-wrap: balance;
+}
+
+.services-page-subtitle {
+    max-width: 640px;
+    margin: 0;
+
+    color: rgba(244, 235, 221, 0.86);
+
+    font-size: clamp(15px, 1.6vw, 18px);
+    line-height: 2;
+}
+
+.services-page-grid-section {
+    padding: clamp(48px, 6vw, 80px) 0;
+
+    background-color: var(--color-ivory);
+}
+
+.services-page-content {
+    padding-top: 0;
+    padding-bottom: clamp(48px, 6vw, 80px);
+}
+
+
+/* ========================================
+   15. CONTACT FORM
+======================================== */
+
+/*
+ * Professional form card aligned with the brand: white surface on the
+ * ivory page, gold accent line, navy labels, two-column name/email row on
+ * desktop, explicit error/success/disabled states. RTL-first.
+ */
+
+.webhoda-contact-form {
+    position: relative;
+
+    max-width: 720px;
+
+    margin-top: 32px;
+
+    padding: 36px 28px 32px;
+
+    overflow: hidden;
+
+    background-color: var(--color-white);
+    border: 1px solid var(--color-border);
+    border-radius: 6px;
+}
+
+/* Gold accent line along the start edge (right in RTL) */
+
+.webhoda-contact-form::before {
+    content: "";
+
+    position: absolute;
+    top: 0;
+    inset-inline-start: 0;
+
+    width: 64px;
+    height: 3px;
+
+    background-color: var(--color-gold);
+}
+
+/* Feedback notices */
+
+.webhoda-contact-notice {
+    margin-bottom: 28px;
+    padding: 16px 18px;
+
+    border-radius: 4px;
+
+    font-size: 14px;
+    line-height: 1.9;
+}
+
+.webhoda-contact-notice p {
+    margin: 0;
+}
+
+.webhoda-contact-notice-success {
+    background-color: rgba(23, 111, 112, 0.08);
+    border: 1px solid var(--color-turquoise);
+
+    color: #0F5656;
+}
+
+.webhoda-contact-notice-error {
+    background-color: rgba(142, 73, 60, 0.07);
+    border: 1px solid var(--color-burgundy);
+
+    color: var(--color-burgundy);
+}
+
+.webhoda-contact-error-list {
+    margin: 8px 0 0;
+    padding-inline-start: 20px;
+
+    list-style: disc;
+}
+
+.webhoda-contact-error-list li {
+    margin-bottom: 4px;
+}
+
+/* Field layout: two columns for name/email on desktop */
+
+.webhoda-contact-row {
+    display: grid;
+    grid-template-columns: 1fr;
+
+    gap: 20px;
+
+    margin-bottom: 0;
+}
+
+.webhoda-contact-field {
+    margin-bottom: 20px;
+}
+
+.webhoda-contact-field label {
+    display: block;
+    margin-bottom: 8px;
+
+    color: var(--color-navy);
+
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.webhoda-required {
+    color: var(--color-burgundy);
+}
+
+.webhoda-contact-field input,
+.webhoda-contact-field textarea {
+    width: 100%;
+
+    padding: 12px 14px;
+
+    border: 1px solid var(--color-border);
+    border-radius: 4px;
+
+    background-color: var(--color-white);
+    color: var(--color-charcoal);
+
+    font-family: inherit;
+    font-size: 15px;
+    line-height: 1.8;
+
+    transition:
+        border-color var(--transition-fast),
+        background-color var(--transition-fast);
+}
+
+.webhoda-contact-field input::placeholder,
+.webhoda-contact-field textarea::placeholder {
+    color: var(--color-muted);
+}
+
+.webhoda-contact-field textarea {
+    resize: vertical;
+    min-height: 160px;
+}
+
+.webhoda-contact-field input:focus-visible,
+.webhoda-contact-field textarea:focus-visible {
+    outline: 2px solid var(--focus-ring-inner);
+    outline-offset: 2px;
+    box-shadow: 0 0 0 6px var(--focus-ring-outer);
+}
+
+/* Error state: burgundy border and pale tint */
+
+.webhoda-contact-field.has-error input,
+.webhoda-contact-field.has-error textarea {
+    border-color: var(--color-burgundy);
+    background-color: rgba(142, 73, 60, 0.04);
+}
+
+.webhoda-field-error {
+    margin: 8px 0 0;
+
+    color: var(--color-burgundy);
+
+    font-size: 13px;
+    line-height: 1.8;
+}
+
+/* Honeypot: hidden and unreachable, without display:none (spam bots) */
+
+.webhoda-contact-hp {
+    position: absolute;
+
+    left: -9999px;
+
+    width: 1px;
+    height: 1px;
+
+    overflow: hidden;
+}
+
+/* Submit button */
+
+.webhoda-contact-submit {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    min-width: 160px;
+    min-height: 48px;
+
+    margin-top: 4px;
+
+    padding: 0 32px;
+
+    border: 1px solid var(--color-gold);
+    border-radius: 4px;
+
+    background-color: var(--color-gold);
+    color: var(--color-navy);
+
+    font-size: 15px;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition:
+        color var(--transition-fast),
+        background-color var(--transition-fast),
+        border-color var(--transition-fast),
+        opacity var(--transition-fast);
+}
+
+.webhoda-contact-submit:hover {
+    background-color: transparent;
+    color: var(--color-gold);
+    border-color: var(--color-gold);
+}
+
+/* Busy/disabled state (set by contact-form.js while sending) */
+
+.webhoda-contact-submit:disabled {
+    opacity: 0.6;
+
+    cursor: wait;
+}
+
+@media (min-width: 640px) {
+
+    .webhoda-contact-form {
+        padding: 44px 40px 40px;
+    }
+
+    .webhoda-contact-row {
+        grid-template-columns: 1fr 1fr;
+    }
+
+}
+
+
+/* ========================================
+   15. REDUCED MOTION
 ======================================== */
 
 /*
@@ -804,7 +1377,10 @@ input:focus-visible {
     .header-search,
     .header-search-button,
     .header-cta,
-    .search-result-title a {
+    .search-result-title a,
+    .footer-menu a,
+    .webhoda-contact-submit,
+    .search-no-results form button {
         transition: none;
     }
 
